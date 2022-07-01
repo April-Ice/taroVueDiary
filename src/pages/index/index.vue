@@ -1,18 +1,33 @@
 <template>
   <view class="index">
-    <text>{{ msg }}</text>
+    <div>111</div>
+    <div v-for="(item, index) in list" :key="index">
+      {{ index }} {{item.title}}
+    </div>
   </view>
 </template>
 
 <script>
-import './index.less'
+import "./index.less";
+import { fetchList } from "./api.js";
 
 export default {
-  data () {
+  data() {
     return {
-      msg: 'Hello world!'
-    }
-  }
-
-}
+      msg: "Hello world!",
+      list: [],
+    };
+  },
+  mounted() {
+    this.getList();
+  },
+  methods: {
+    getList() {
+      fetchList().then((res) => {
+        console.log("----res---", res);
+        this.list = res.todoList;
+      });
+    },
+  },
+};
 </script>

@@ -10,7 +10,7 @@ import './index.less'
 export default {
   data () {
     return {
-      msg: 'Hello world!'
+      msg: 'Hello test!'
     }
   }
 }

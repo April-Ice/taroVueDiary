@@ -21,7 +21,9 @@ export default defineAppConfig({
       },
       {
         pagePath: 'pages/test/index',
-        text: '日志'
+        text: '分类',
+        iconPath: './assets/index.png',
+        selectedIconPath: './assets/index.png',
       }
     ]
   },
